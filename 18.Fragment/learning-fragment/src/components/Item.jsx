@@ -1,7 +1,11 @@
+import style from "./Item.module.css";
+
 function Item({ foodItem }) {
   return (
     <>
-      <li className="list-group-item">{foodItem}</li>
+      <li className={`${style["my-item"]}`}>
+        <span className={`${style["my-span"]}`}>{foodItem}</span>
+      </li>
     </>
   );
 }

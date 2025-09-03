@@ -1,0 +1,14 @@
+.my-item{
+background-color: khaki;
+margin: 10px;
+padding: 10px;
+border-radius: 10px;
+border: none;
+outline: none;
+}
+
+.my-span{
+color: brown;
+font-size: 28px;
+font-weight: 600;
+}

@@ -12,3 +12,7 @@ color: brown;
 font-size: 28px;
 font-weight: 600;
 }
+
+.button{
+  float: right;
+}

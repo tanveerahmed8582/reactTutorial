@@ -1,3 +1,5 @@
+import { AiTwotoneDelete } from "react-icons/ai";
+
 function TodoItem({ todoName, todoDate, onDeleteClick }) {
   return (
     <>
@@ -13,7 +15,7 @@ function TodoItem({ todoName, todoDate, onDeleteClick }) {
                 onDeleteClick(todoName);
               }}
             >
-              Delete
+              <AiTwotoneDelete />
             </button>
           </div>
         </div>

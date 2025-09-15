@@ -1,48 +1,39 @@
 import styles from "./AddTodo.module.css";
-import { useState } from "react";
+import { CgAddR } from "react-icons/cg";
+import { useRef } from "react";
 
 function AppTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState();
-  const [todoDate, setDueDate] = useState();
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
-
-  const handleDateChange = (event) => {
-    setDueDate(event.target.value);
-  };
-
-  const handleAddButtonClicked = () => {
-    onNewItem(todoName, todoDate);
-    setTodoName("");
-    setDueDate("");
+  const handleAddButtonClicked = (event) => {
+    event.preventDefault();
+    const todoName = todoNameElement.current.value;
+    const dueDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
+    onNewItem(todoName, dueDate);
   };
   return (
     <>
       <div className="container text-center">
-        <div className="row my-row">
+        <form className="row my-row" onSubmit={handleAddButtonClicked}>
           <div className="col-6">
             <input
               type="text"
+              ref={todoNameElement}
               placeholder="Enter Todo here"
-              value={todoName}
-              onChange={handleNameChange}
             />
           </div>
           <div className="col-4">
-            <input type="date" value={todoDate} onChange={handleDateChange} />
+            <input ref={dueDateElement} type="date" />
           </div>
           <div className="col-2">
-            <button
-              type="button"
-              className="btn btn-success my-button"
-              onClick={handleAddButtonClicked}
-            >
-              Add
+            <button type="submit" className="btn btn-success my-button">
+              <CgAddR />
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );

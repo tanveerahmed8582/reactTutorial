@@ -3,7 +3,7 @@ import { useContext } from "react";
 import TodoItem from "./TodoItem";
 import styles from "./TodoItems.module.css";
 
-const TodoItems = ({ onDeleteClick }) => {
+const TodoItems = () => {
   const { todoItems } = useContext(TodoItemsContext);
 
   return (
@@ -14,7 +14,6 @@ const TodoItems = ({ onDeleteClick }) => {
             key={item.name}
             todoName={item.name}
             todoDate={item.dueDate}
-            onDeleteClick={onDeleteClick}
           />
         ))}
       </div>

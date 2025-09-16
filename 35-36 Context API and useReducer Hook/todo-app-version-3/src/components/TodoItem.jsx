@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { TodoItemsContext } from "../store/todo-items-store";
 
-function TodoItem({ todoName, todoDate, onDeleteClick }) {
+function TodoItem({ todoName, todoDate }) {
+  const { deleteItem } = useContext(TodoItemsContext);
+
   return (
     <>
       <div className="container ">
@@ -12,7 +16,7 @@ function TodoItem({ todoName, todoDate, onDeleteClick }) {
               type="button"
               className="btn btn-danger my-button"
               onClick={() => {
-                onDeleteClick(todoName);
+                deleteItem(todoName);
               }}
             >
               <AiTwotoneDelete />

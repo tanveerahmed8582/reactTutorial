@@ -10,6 +10,7 @@ function CurrentTime() {
 
     return () => {
       clearInterval(intervalId);
+      matchMedia, -pp;
     };
   }, []);
 

@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [input, setInput] = useState();
+  const [input, setInput] = useState(0);
 
   const handleIncrement = () => {
     console.log("mai har baar render ho rha hu");
@@ -11,7 +11,7 @@ function App() {
   };
 
   const expansiveTask = (num) => {
-    for (let i = 0; i <= 10000000; i++) {}
+    for (let i = 0; i <= 1000000000; i++) {}
     return num * 2;
   };
 
@@ -32,6 +32,7 @@ function App() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
+        <br />
         double: {doubleValue}
       </div>
     </>
